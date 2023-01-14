@@ -13,6 +13,6 @@ export class ServicesService {
   constructor(private http: HttpClient) { }
 
   getSportGames(): Observable<any> {
-	return this.http.get(this.path + 'SportGames/GetSportGames');
+	return this.http.get(this.path + '/SportGame/GetSportGames');
   }
 }
