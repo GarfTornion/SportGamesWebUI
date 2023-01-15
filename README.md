@@ -1,4 +1,10 @@
-# Client
+# Sport Games Client
+
+A client designed to present sport game information from the [Sport Games API](https://github.com/GarfTornion/SportGamesAPI). Originally designed for Azure Cloud -services.
+
+Displays the 10 latest games in a table and creates a live connection to the API-server using SignalR. When a game is created or updated on the API, the game list will update.
+
+[Live demo](https://sportgamesclient.azurewebsites.net/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
 
