@@ -1,19 +1,20 @@
+<div class="sport-game-list">
 <h2>Live Sport Games Scoring List</h2>
 <div class="row">
   <div class="col-md-12">
 	<div class="table-responsive">
-	  <table mat-table [dataSource]="signalRService.data" class="mat-elevation -z8">
+	  <table mat-table [dataSource]="signalRService.data|slice:0:10" class="mat-elevation -z8">
 		<ng-container matColumnDef="id">
 		  <th mat-header-cell *matHeaderCellDef>Game</th>
 		  <td mat-cell *matCellDef="let game">#{{game.id}}</td>
 		</ng-container>
 		<ng-container matColumnDef="team1">
 		  <th mat-header-cell *matHeaderCellDef>Team 1</th>
-		  <td mat-cell *matCellDef="let game"><div>{{game.team1Score}}</div><div>{{game.team1Name}}</div></td>
+		  <td class="team-cell" mat-cell *matCellDef="let game"><div [ngClass]="{'lost' : teamLostClass(game.team1Score, game.team2Score, game.finished), 'team-wrapper' : true}"><div class="team-score">{{game.team1Score || 0}}</div><div class="team-name">{{game.team1Name}}</div></div></td>
 		</ng-container>
 		<ng-container matColumnDef="team2">
 		  <th mat-header-cell *matHeaderCellDef>Team 2</th>
-		  <td mat-cell *matCellDef="let game"><div>{{game.team2Score}}</div><div>{{game.team2Name}}</div></td>
+		  <td class="team-cell" mat-cell *matCellDef="let game"><div [ngClass]="{'lost' : teamLostClass(game.team2Score, game.team1Score, game.finished), 'team-wrapper' : true}" ><div class="team-score">{{game.team2Score || 0}}</div><div class="team-name">{{game.team2Name}}</div></div></td>
 		</ng-container>
 		<ng-container matColumnDef="startTime">
 		  <th mat-header-cell *matHeaderCellDef>Start Time</th>
@@ -28,3 +29,4 @@
 	  </table>
 	</div>
   </div>
+</div>

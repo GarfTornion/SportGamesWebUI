@@ -11,7 +11,6 @@ import { SignalrService } from '../services/signalr.service';
 })
 export class SportGameListComponent implements OnInit {
 
-  games!: sportGame[];
   displayedColumns: string[] = ['id', 'team1', 'team2', 'startTime', 'endTime'];
 
   constructor(private services: ServicesService, public signalRService: SignalrService) { }
@@ -27,6 +26,14 @@ export class SportGameListComponent implements OnInit {
 	});
   }
 
+  teamLostClass(team1Score : number, team2Score : number, finished : boolean) {
+	if (finished) {
+		if (team1Score < team2Score) {
+			return true;
+		}
+	}
+	return false;
+  }
 
 }
 
