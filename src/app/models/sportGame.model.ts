@@ -1,17 +1,21 @@
-import { sportGameTeam } from './sportGameTeam.model';
-
 export class sportGame{
-	sportGameId: number;
-	sportGameStartTime: Date;
-	sportGameEndTime: Date | undefined;
-	sportGameTeams: sportGameTeam[];
-	sportGameFinished: boolean;
+	id: number;
+	startTime: Date;
+	endTime: Date | undefined;
+	team1Name: string;
+	team1Score: number;
+	team2Name: string;
+	team2Score: number;
+	finished: boolean;
 
-	constructor(sportGameId: number, sportGameStartTime: Date, sportGameTeams: sportGameTeam[], sportGameFinished: boolean) {
-		this.sportGameId = sportGameId;
-		this.sportGameStartTime = sportGameStartTime;
-		this.sportGameEndTime = undefined;
-		this.sportGameTeams = sportGameTeams;
-		this.sportGameFinished = sportGameFinished;
+	constructor(id: number, startTime: Date, team1Name: string, team1Score: number, team2Name : string, team2Score: number, finished: boolean) {
+		this.id = id;
+		this.startTime = startTime;
+		this.endTime = undefined;
+		this.team1Name = team1Name;
+		this.team1Score = team1Score;
+		this.team2Name = team2Name;
+		this.team2Score = team2Score;
+		this.finished = finished;
 	}
 }
