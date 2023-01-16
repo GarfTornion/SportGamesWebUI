@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { sportGame } from '../models/sportGame.model';
-import { MatTableDataSource } from '@angular/material/table';
 import { ServicesService } from '../services/services.service';
 import { SignalrService } from '../services/signalr.service';
 
 @Component({
   selector: 'app-sport-game-list',
   templateUrl: './sport-game-list.component.html',
-  styleUrls: ['./sport-game-list.component.scss']
+  styleUrls: ['./sport-game-list.component.scss'],
 })
 export class SportGameListComponent implements OnInit {
 

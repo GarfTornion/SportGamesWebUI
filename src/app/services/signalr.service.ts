@@ -25,8 +25,8 @@ export class SignalrService {
 
   public addGameDataListener() {
 	this.hubConnection.on('updategames', (data) => {
-	  this.data = data.result.value;
 	  console.log(data);
+	  this.data = data;
 	});
   }
 }
