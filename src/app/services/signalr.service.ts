@@ -10,9 +10,9 @@ import { environment } from 'src/environments/environment';
 export class SignalrService {
   public data: sportGame[]; // This is the data that will be updated by SignalR
 
-  private hubConnection: signalR.HubConnection;
+  hubConnection: signalR.HubConnection;
 
-  private path = environment.hubUrl;
+  path = environment.hubUrl;
 
   constructor() {
 	console.log(this.path);
